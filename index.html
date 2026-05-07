@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marco Ortiz Sanchez — Molecular Biologist & Translational Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink: #0a0f1a;
+  --paper: #fafaf8;
+  --accent: #2EB8A6;
+  --accent-deep: #04123D;
+  --gold: #CC9A2E;
+  --muted: #6b7280;
+  --subtle: #e5e7eb;
+  --card-bg: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250, 250, 248, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--subtle);
+  padding: 0.8rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+nav .logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--accent-deep);
+  letter-spacing: 0.02em;
+}
+nav .logo span { color: var(--accent); }
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav ul a {
+  text-decoration: none; color: var(--muted);
+  font-size: 0.85rem; font-weight: 400;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  transition: color 0.3s;
+}
+nav ul a:hover { color: var(--accent); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 6rem 2rem 4rem;
+  max-width: 1100px; margin: 0 auto;
+  position: relative;
+}
+.hero-content { max-width: 700px; }
+.hero-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.hero-label::before {
+  content: ''; width: 2rem; height: 1px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  color: var(--accent-deep);
+  margin-bottom: 1.5rem;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+}
+.hero-tags span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--subtle);
+  border-radius: 2px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.hero-photo {
+  flex-shrink: 0;
+}
+.hero-photo-placeholder {
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.hero-photo-placeholder span {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.5rem;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.05em;
+}
+.hero-photo-placeholder::after {
+  content: '';
+  position: absolute;
+  top: -8px; left: -8px; right: -8px; bottom: -8px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.hero-photo-img {
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--subtle);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.project-img-placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, var(--paper) 0%, var(--subtle) 100%);
+  border: 1px dashed var(--subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.project-img-placeholder::before {
+  content: '';
+  position: absolute;
+  width: 40px; height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  opacity: 0.25;
+}
+.project-img-placeholder span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+.project-img-placeholder img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* ─── SECTIONS ─── */
+section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.section-label::before {
+  content: ''; width: 1.5rem; height: 1px;
+  background: var(--accent);
+}
+section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--accent-deep);
+  margin-bottom: 2rem;
+  line-height: 1.25;
+}
+
+/* ─── ABOUT ─── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+.about-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.stat-card {
+  padding: 1.5rem;
+  border: 1px solid var(--subtle);
+  border-left: 3px solid var(--accent);
+}
+.stat-card .number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--accent-deep);
+  line-height: 1;
+}
+.stat-card .label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+/* ─── EXPERIENCE ─── */
+.timeline { position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--subtle));
+}
+.timeline-item {
+  padding-left: 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute; left: -4px; top: 0.4rem;
+  width: 9px; height: 9px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.timeline-item.highlight::before {
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(204, 154, 46, 0.15);
+}
+.timeline-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.timeline-role {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--accent-deep);
+  margin-bottom: 0.15rem;
+}
+.timeline-org {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ─── PROJECTS ─── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--subtle);
+  padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.project-card.featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  border-left: 3px solid var(--accent);
+}
+.project-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+.project-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: var(--accent-deep);
+  margin-bottom: 0.6rem;
+}
+.project-card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.tech-stack {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin-top: 1rem;
+}
+.tech-stack span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--paper);
+  border: 1px solid var(--subtle);
+  color: var(--muted);
+}
+
+/* ─── SKILLS ─── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.skill-group h3 {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--accent-deep);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--subtle);
+}
+.skill-group ul {
+  list-style: none;
+}
+.skill-group li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+.skill-group li::before {
+  content: '';
+  position: absolute; left: 0; top: 0.7rem;
+  width: 4px; height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* ─── EDUCATION ─── */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.edu-card {
+  padding: 1.8rem;
+  border: 1px solid var(--subtle);
+  border-top: 3px solid var(--accent-deep);
+}
+.edu-card .degree {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--accent-deep);
+  margin-bottom: 0.3rem;
+}
+.edu-card .institution {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.edu-card .year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.edu-card .detail {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  line-height: 1.6;
+}
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background: var(--accent-deep);
+  padding: 5rem 2rem;
+  max-width: none;
+  text-align: center;
+}
+.contact-section .section-label { justify-content: center; }
+.contact-section .section-label::before { display: none; }
+.contact-section h2 { color: white; }
+.contact-section p {
+  color: rgba(255,255,255,0.6);
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  font-size: 0.95rem;
+}
+.contact-links {
+  display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.contact-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid rgba(46, 184, 166, 0.3);
+  transition: all 0.3s;
+  letter-spacing: 0.04em;
+}
+.contact-links a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  border-top: 1px solid var(--subtle);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  nav ul { display: none; }
+  .hero { padding-top: 5rem; flex-direction: column-reverse; gap: 2rem; }
+  .hero-photo-placeholder { width: 180px; height: 180px; }
+  .hero-photo-placeholder span { font-size: 2.5rem; }
+  .hero-photo-img { width: 180px; height: 180px; }
+  .about-grid, .projects-grid, .edu-grid, .skills-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-content > * {
+  animation: fadeUp 0.6s ease-out both;
+}
+.hero-label { animation-delay: 0.1s; }
+.hero h1 { animation-delay: 0.2s; }
+.hero p { animation-delay: 0.35s; }
+.hero-tags { animation-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Marco <span>Ortiz Sanchez</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-label">Molecular Biologist & Translational Scientist</div>
+    <h1>Building systems that turn <em>invisible biology</em> into actionable intelligence</h1>
+    <p>PhD-trained molecular biologist with a decade of experience translating bench science into real-world products across organ-on-chip, iPSC, and biosurveillance platforms. Currently exploring how untapped biological specimen streams can power population-level epidemiological insight.</p>
+    <div class="hero-tags">
+      <span>Molecular Biology</span>
+      <span>Bioinformatics</span>
+      <span>Translational Medicine</span>
+      <span>Assay Development</span>
+      <span>Organ-on-Chip</span>
+      <span>Epidemiological Surveillance</span>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <!-- REPLACE: swap this placeholder with your photo -->
+    <!-- To use: replace the entire .hero-photo-placeholder div with:
+         <img src="your-photo.jpg" alt="Marco Ortiz Sanchez" class="hero-photo-img"> -->
+    <div class="hero-photo-placeholder">
+      <span>MOS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="section-label">About</div>
+  <h2>At the intersection of molecular science, data, and public health</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a Mexican-born, Cambridge-based scientist with a trajectory that spans genomics, stem cell biology, organ-on-chip microphysiology, and translational medicine. My work has consistently sat at the boundary between laboratory science and its application — building the systems, assays, and analytical pipelines that connect fundamental biology to clinical and commercial impact.</p>
+      <p>At CN-Bio, I worked as a Senior Scientist on dual organ-on-chip platforms coupling gut and liver for pharmaceutical ADME studies, operating in a hybrid R&D/CRO role that demanded both scientific rigour and client-facing delivery. At Sita Bio, I led the design of an endometrium-on-chip platform, directing the scientific strategy for modelling reproductive tissue in microphysiological systems. Then at bit.bio, I established the Translational Medicine laboratory from the ground up, bridging iPSC-derived cell products with their real-world therapeutic applications.</p>
+      <p>I'm currently focused on biosurveillance — specifically, whether discrete biological waste streams that are currently incinerated without analysis could be transformed into population-level epidemiological intelligence. It's a question that sits at the convergence of molecular diagnostics, data science, and public health infrastructure.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="number">10+</div>
+        <div class="label">Years in molecular biology & translational science</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">4</div>
+        <div class="label">Industry positions across biotech & diagnostics</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">PhD</div>
+        <div class="label">UCL / Francis Crick Institute</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">BSc</div>
+        <div class="label">Genomic Sciences, UNAM (Mexico)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2>A trajectory from the bench to translational impact</h2>
+  <div class="timeline">
+    <div class="timeline-item highlight">
+      <div class="timeline-date">2025 – Present</div>
+      <div class="timeline-role">Founder & CEO</div>
+      <div class="timeline-org">Vitrail Ltd, Cambridge</div>
+      <div class="timeline-desc">Building a biosurveillance platform that extracts population-level epidemiological intelligence from discrete biological waste streams. Developing multiplexed molecular assays for STI prevalence and antimicrobial resistance genotyping. Leading scientific strategy, bioinformatics pipeline design, and institutional partnership development.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Previous Role</div>
+      <div class="timeline-role">Translational Medicine Lab Lead</div>
+      <div class="timeline-org">bit.bio, Cambridge</div>
+      <div class="timeline-desc">Established the Translational Medicine laboratory from the ground up, building the function from inception. Designed and implemented assay strategies to validate iPSC-derived cell products for therapeutic applications, bridging the gap between cell engineering and clinical translation.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Previous Role</div>
+      <div class="timeline-role">Lead Scientist</div>
+      <div class="timeline-org">Sita Bio</div>
+      <div class="timeline-desc">Led the design and development of an organ-on-chip platform for endometrium. Directed the scientific strategy for modelling endometrial tissue in microphysiological systems, from cell sourcing and culture protocol development through to functional readout validation.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Previous Role</div>
+      <div class="timeline-role">Senior Scientist</div>
+      <div class="timeline-org">CN-Bio, Cambridge</div>
+      <div class="timeline-desc">Worked on dual organ-on-chip systems (gut and liver) for pharmaceutical clients, specifically on ADME (absorption, distribution, metabolism, excretion) studies. Operated in a hybrid R&D and CRO role, balancing platform development with client-facing experimental delivery and data reporting.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <div class="section-label">Projects & Interests</div>
+  <h2>What I'm building and thinking about</h2>
+  <div class="projects-grid">
+    <div class="project-card featured">
+      <div>
+        <div class="project-tag">Current Focus</div>
+        <h3>Biosurveillance from Untapped Specimen Streams</h3>
+        <div class="project-img-placeholder">
+          <!-- REPLACE: <img src="biosurveillance-illustration.jpg" alt="Biosurveillance concept"> -->
+          <span>Add illustration: waste-to-data pipeline</span>
+        </div>
+        <p>Investigating whether nucleic acids extractable from discrete solid sanitary and incontinence waste — currently incinerated without analysis — can power population-level disease surveillance inaccessible to existing systems. These specimens contain concentrated pathogen signals (STIs, antimicrobial resistance markers, viral genotypes) that are structurally absent from wastewater and clinical surveillance.</p>
+      </div>
+      <div>
+        <p style="margin-bottom: 1rem;">Key technical workstreams include multiplex qPCR assay design for a six-gene gonorrhoea AMR resistance panel, analytical validation in a novel specimen matrix, bioinformatics pipeline construction for population-level trend detection, and epidemiological modelling from pooled anonymous specimens.</p>
+        <div class="tech-stack">
+          <span>Multiplex qPCR</span>
+          <span>Amplicon Sequencing</span>
+          <span>AMR Genotyping</span>
+          <span>Bioinformatics</span>
+          <span>Epidemiological Modelling</span>
+          <span>GDPR Architecture</span>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Translational Medicine</div>
+      <h3>iPSC-Derived Cell Product Validation</h3>
+      <div class="project-img-placeholder">
+        <!-- REPLACE: <img src="ipsc-lab.jpg" alt="iPSC translational medicine"> -->
+        <span>Add illustration: iPSC validation workflow</span>
+      </div>
+      <p>At bit.bio, designed and implemented the assay infrastructure for validating iPSC-derived cell products across multiple lineages. Built the laboratory function from scratch, establishing protocols for functional characterisation, potency assays, and quality-relevant analytics bridging cell engineering and regulatory requirements.</p>
+      <div class="tech-stack">
+        <span>iPSC Biology</span>
+        <span>Assay Development</span>
+        <span>Potency Testing</span>
+        <span>GLP-Adjacent</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Organ-on-Chip</div>
+      <h3>Endometrium-on-Chip</h3>
+      <div class="project-img-placeholder">
+        <!-- REPLACE: <img src="endometrium-chip.jpg" alt="Endometrium organ-on-chip"> -->
+        <span>Add illustration: endometrium chip design</span>
+      </div>
+      <p>At Sita Bio, led the design of an organ-on-chip platform modelling the endometrium. Directed scientific strategy from cell sourcing through culture protocol development to functional readout validation, creating in vitro models for reproductive biology and drug development applications.</p>
+      <div class="tech-stack">
+        <span>Organ-on-Chip</span>
+        <span>Endometrial Biology</span>
+        <span>Microphysiology</span>
+        <span>Cell Culture</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Pharma Services</div>
+      <h3>Dual Organ-on-Chip for ADME</h3>
+      <div class="project-img-placeholder">
+        <!-- REPLACE: <img src="gut-liver-chip.jpg" alt="Gut-liver organ-on-chip"> -->
+        <span>Add illustration: gut-liver dual chip</span>
+      </div>
+      <p>At CN-Bio, worked on dual organ-on-chip systems coupling gut and liver tissue for pharmaceutical ADME studies. Operated in a hybrid R&D/CRO role — developing platform capabilities while simultaneously delivering client-facing experiments, data analysis, and reporting for pharma partners.</p>
+      <div class="tech-stack">
+        <span>Gut-Liver Chip</span>
+        <span>ADME</span>
+        <span>Pharmacokinetics</span>
+        <span>CRO Delivery</span>
+        <span>Toxicology</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills">
+  <div class="section-label">Competencies</div>
+  <h2>Technical depth across wet lab, computation, and strategy</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Molecular & Cell Biology</h3>
+      <ul>
+        <li>Multiplex qPCR / dPCR assay design</li>
+        <li>Nucleic acid extraction & purification</li>
+        <li>Amplicon sequencing (NGS)</li>
+        <li>Cell culture (primary, iPSC, organoid)</li>
+        <li>Immunoassays (ELISA, flow cytometry)</li>
+        <li>BSL-2 laboratory practice</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Bioinformatics & Data</h3>
+      <ul>
+        <li>Genomic data analysis pipelines</li>
+        <li>AMR genotyping bioinformatics</li>
+        <li>Statistical modelling (R, Python)</li>
+        <li>Epidemiological trend detection</li>
+        <li>Data visualisation</li>
+        <li>Database architecture</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Translational & Strategic</h3>
+      <ul>
+        <li>Laboratory establishment (0 → 1)</li>
+        <li>Assay validation (LoD, LoQ, specificity)</li>
+        <li>Regulatory pathway navigation</li>
+        <li>IP strategy & patent drafting</li>
+        <li>Scientific writing & publications</li>
+        <li>Stakeholder & partnership development</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2>Academic foundations</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="degree">PhD, Molecular Biology</div>
+      <div class="institution">University College London / Francis Crick Institute</div>
+      <div class="year">London, United Kingdom</div>
+      <div class="detail">Doctoral research at one of Europe's leading biomedical research centres, working at the intersection of molecular biology and translational science.</div>
+    </div>
+    <div class="edu-card">
+      <div class="degree">BSc, Genomic Sciences</div>
+      <div class="institution">Universidad Nacional Autónoma de México (UNAM)</div>
+      <div class="year">Mexico City, Mexico</div>
+      <div class="detail">Undergraduate training in genomics, molecular biology, and computational biology at Latin America's leading research university.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="contact-section">
+  <div class="section-label">Get in Touch</div>
+  <h2>Let's build something together</h2>
+  <p>I'm always interested in conversations about translational science, biosurveillance, and the spaces where molecular biology meets population-level impact.</p>
+  <div class="contact-links">
+    <a href="mailto:marco@vitrail.health">Email</a>
+    <a href="https://www.linkedin.com/in/marco-ortiz-sanchez" target="_blank">LinkedIn</a>
+    <a href="https://vitrail.health" target="_blank">Vitrail</a>
+  </div>
+</section>
+
+<footer>
+  Marco Ortiz Sanchez — Cambridge, UK — 2026
+</footer>
+
+</body>
+</html>
