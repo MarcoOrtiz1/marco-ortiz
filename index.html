@@ -166,6 +166,13 @@ nav ul a:hover { color: var(--accent); }
   width: 100%; height: 100%;
   object-fit: cover;
 }
+.project-img-placeholder:has(img) {
+  border: none;
+  background: none;
+}
+.project-img-placeholder:has(img)::before {
+  display: none;
+}
 
 /* ─── SECTIONS ─── */
 section {
@@ -597,8 +604,7 @@ footer {
       <div class="project-tag">Translational Medicine</div>
       <h3>iPSC-Derived Cell Product Validation</h3>
       <div class="project-img-placeholder">
-        <!-- REPLACE: <img src="ipsc-lab.jpg" alt="iPSC translational medicine"> -->
-        <span>Add illustration: iPSC validation workflow</span>
+        <img src="gabaergic neurons.jpg" alt="iPSC-Derived cell product" class="project-img">
       </div>
       <p>At bit.bio, designed and implemented the assay infrastructure for validating iPSC-derived cell products across multiple lineages. Built the laboratory function from scratch, establishing protocols for functional characterisation, potency assays, and quality-relevant analytics bridging cell engineering and regulatory requirements.</p>
       <div class="tech-stack">
