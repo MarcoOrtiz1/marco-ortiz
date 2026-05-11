@@ -339,6 +339,26 @@ section h2 {
   border: 1px solid var(--subtle);
   color: var(--muted);
 }
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.card-link:hover {
+  gap: 0.7rem;
+  color: var(--accent-deep);
+}
+.card-link + .card-link {
+  margin-left: 1.2rem;
+}
 
 /* ─── SKILLS ─── */
 .skills-grid {
@@ -627,6 +647,7 @@ footer {
         <img src="dual organ.jpg" alt="Dual organ platform" class="project-img">
       </div>
       <p>At CN-Bio, worked on dual organ-on-chip systems coupling gut and liver tissue for pharmaceutical ADME studies. Operated in a hybrid R&D/CRO role — developing platform capabilities while simultaneously delivering client-facing experiments, data analysis, and reporting for pharma partners.</p>
+      <a href="https://cn-bio.com/resource/mps-and-in-silico-modeling-next-gen-bioavailability-predictions/" target="_blank" rel="noopener noreferrer" class="card-link">View webinar ↗</a>
       <div class="tech-stack">
         <span>Gut-Liver Chip</span>
         <span>ADME</span>
