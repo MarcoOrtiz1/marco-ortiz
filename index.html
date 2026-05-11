@@ -359,6 +359,25 @@ section h2 {
 .card-link + .card-link {
   margin-left: 1.2rem;
 }
+.edu-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+  min-height: 40px;
+  flex-wrap: wrap;
+}
+.edu-logo {
+  height: 36px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+.edu-card:hover .edu-logo {
+  opacity: 1;
+}
 
 /* ─── SKILLS ─── */
 .skills-grid {
@@ -771,22 +790,33 @@ footer {
   <h2>Academic foundations</h2>
   <div class="edu-grid">
     <div class="edu-card">
-      <div class="degree">PhD, Stem cell Biology - Wellcome Trust Fellow</div>
-      <div class="institution">University College London / Francis Crick Institute</div>
-      <div class="year">London, United Kingdom</div>
-      <div class="detail">Doctoral research at one of Europe's leading biomedical research centres, working at the intersection of molecular biology and translational science.</div>
+          <div class="edu-logos">
+            <img src="ucl.png" alt="University College London" class="edu-logo">
+            <img src="fc.jpeg" alt="Francis Crick Institute" class="edu-logo">
+            <img src="wellcome.png" alt="Wellcome Trust" class="edu-logo">
+          </div>
+          <div class="degree">PhD, Stem cell Biology – Wellcome Trust Fellow</div>
+          <div class="institution">University College London / Francis Crick Institute</div>
+          <div class="year">London, United Kingdom</div>
+          <div class="detail">Doctoral research at one of Europe's leading biomedical research centres, working at the intersection of molecular biology and translational science.</div>
+      </div>
+    <div class="edu-card">
+          <div class="edu-logos">
+            <img src="uwmadison.png" alt="University of Wisconsin–Madison" class="edu-logo">
+          </div>
+          <div class="degree">Postbaccalaureate Research, Kimble Lab (HHMI)</div>
+          <div class="institution">University of Wisconsin–Madison</div>
+          <div class="year">Madison, Wisconsin, USA</div>
+          <div class="detail">Generated and analysed the C. elegans germline RNA-Seq dataset that became the first-author publication (Ortiz et al., G3 2014).</div>
     </div>
     <div class="edu-card">
-      <div class="degree">Postbaccalaureate Research, Kimble Lab (HHMI)</div>
-      <div class="institution">University of Wisconsin–Madison</div>
-      <div class="year">Madison, Wisconsin, USA</div>
-      <div class="detail">Generated and analysed the C. elegans germline RNA-Seq dataset that became the first-author publication (Ortiz et al., G3 2014).</div>
-    </div>
-    <div class="edu-card">
-      <div class="degree">BSc, Genomic Sciences</div>
-      <div class="institution">Universidad Nacional Autónoma de México (UNAM)</div>
-      <div class="year">Mexico City, Mexico</div>
-      <div class="detail">Undergraduate training in genomics, molecular biology, and computational biology at Latin America's leading research university.</div>
+          <div class="edu-logos">
+            <img src="unam.png" alt="Universidad Nacional Autónoma de México" class="edu-logo">
+          </div>
+          <div class="degree">BSc, Genomic Sciences</div>
+          <div class="institution">Universidad Nacional Autónoma de México (UNAM)</div>
+          <div class="year">Mexico City, Mexico</div>
+          <div class="detail">Undergraduate training in genomics, molecular biology, and computational biology at Latin America's leading research university.</div>
     </div>
   </div>
 </section>
